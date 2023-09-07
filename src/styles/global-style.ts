@@ -5,5 +5,6 @@ export const GlobalStyle = createGlobalStyle`
   ul {list-style: none}
   a {text-decoration: none;}
   img {width: 100%}
-  body {font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; line-height: 1.5; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+  body {font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; line-height: 1.5; 
+    text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 `;
