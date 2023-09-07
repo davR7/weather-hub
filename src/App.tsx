@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import Weather from './pages/Weather';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { WeatherProvider } from './contexts/weather/WeatherProvider';
 
 const App: React.FC = () => {
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <WeatherProvider>
       <Weather />
-    </QueryClientProvider>
+    </WeatherProvider>
   );
 };
 
