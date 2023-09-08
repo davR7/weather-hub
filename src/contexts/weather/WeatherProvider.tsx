@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { WeatherContext } from './WeatherContext';
 import { WeatherProps } from '../../types/WeatherProps';
-import { useApi } from '../../hooks/useApi';
+import { useApi } from '../../hooks';
 
 type ProviderProps = {
   children: React.ReactNode;
