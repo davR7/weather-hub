@@ -2,17 +2,21 @@ import * as S from './style';
 import ClimateDetails from '../../components/ClimateDetails';
 import ClimateSummary from '../../components/ClimateSummary';
 import SearchBar from '../../components/SearchBar';
+import { useWeather } from '../../hooks';
 
-function Weather() {
+const WeatherPage: React.FC = () => {
+  const { VITE_API_UNSPLASH } = import.meta.env;
+  const { weather } = useWeather();
+
   return (
-    <S.Container>
-      <S.Wheather>
+    <S.Container $url={VITE_API_UNSPLASH} $city={weather?.name}>
+      <S.WeatherScreen>
         <SearchBar />
         <ClimateSummary />
         <ClimateDetails />
-      </S.Wheather>
+      </S.WeatherScreen>
     </S.Container>
   );
-}
+};
 
-export default Weather;
+export default WeatherPage;
