@@ -1,15 +1,24 @@
 import * as S from './style';
-import cloud from '../../assets/images/cloud.png';
 import TimeStamp from '../TimeStamp';
+import { useWeather } from '../../hooks/useWeather';
+import { pickWeatherIcon } from '../../utils';
+import CountryFlag from '../CountryFlag';
 
 const ClimateSummary: React.FC = () => {
-  return (
+  const { weather, error } = useWeather();
+
+  return !error && weather ? (
     <S.ClimateSummary>
-      <img src={cloud} alt="clud" />
-      <S.Temperature>24°</S.Temperature>
-      <TimeStamp />
-      <S.Location>London</S.Location>
+      <S.WeatherImage src={pickWeatherIcon(weather.weather[0].icon)} alt="weather icon" />
+      <S.Temperature>{Math.round(weather.main.temp)}°</S.Temperature>
+      <TimeStamp timezone={weather.timezone} />
+      <S.LocationWrap>
+        <S.Location>{weather.name}</S.Location>
+        <CountryFlag country={weather.sys.country} style="shiny" size={32} />
+      </S.LocationWrap>
     </S.ClimateSummary>
+  ) : (
+    <S.ErrorMessage>{error?.clientMessage}</S.ErrorMessage>
   );
 };
 
