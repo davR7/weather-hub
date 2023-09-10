@@ -1,10 +1,10 @@
-import Weather from './pages/Weather';
+import WeatherPage from './pages/WeatherPage';
 import { WeatherProvider } from './contexts/weather/WeatherProvider';
 
 const App: React.FC = () => {
   return (
     <WeatherProvider>
-      <Weather />
+      <WeatherPage />
     </WeatherProvider>
   );
 };
