@@ -18,6 +18,9 @@ const SearchBar: React.FC = () => {
 
   const handlerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!cityInput) return;
+    
     const formData = new FormData(e.currentTarget);
     const { city }: SearchProps = Object.fromEntries(formData);
 
