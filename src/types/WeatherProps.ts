@@ -38,6 +38,6 @@ export type WeatherProps = {
   };
   timezone: number;
   id: number;
-  name: number;
+  name: string;
   cod: number;
 };
