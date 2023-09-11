@@ -23,7 +23,7 @@ export const WeatherProvider: React.FC<ProviderProps> = ({ children }) => {
       })
       .catch(err => {
         setWeather(err.data);
-        setError(err);
+        setError(err.error);
       });
   }
 
