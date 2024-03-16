@@ -1,4 +1,5 @@
 import * as S from './style';
+import { screenResolution } from '../../utils';
 import ClimateDetails from '../../components/ClimateDetails';
 import ClimateSummary from '../../components/ClimateSummary';
 import SearchBar from '../../components/SearchBar';
@@ -9,7 +10,7 @@ const WeatherPage: React.FC = () => {
   const { weather } = useWeather();
 
   return (
-    <S.Container $url={VITE_API_UNSPLASH} $city={weather?.name}>
+    <S.Container $url={`${VITE_API_UNSPLASH}/${screenResolution()}/?`} $city={weather?.name}>
       <S.WeatherScreen>
         <SearchBar />
         <ClimateSummary />
