@@ -29,7 +29,7 @@ fornece acesso instantâneo a previsões climáticas de diversas cidades ao redo
 
 ## Utilizando Docker
 
-#### Criar a image:
+#### Criar a imagem:
 
 ```markdown
 docker build -t weather-hub-image .
