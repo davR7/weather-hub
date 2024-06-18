@@ -1,13 +1,8 @@
 import styled from 'styled-components';
 import * as M from '../../styles/mixins-style';
 
-type ContainerProps = {
-  $url: string;
-  $city: string | undefined;
-};
-
-export const Container = styled.div<ContainerProps>`
-  background-image: url(${props => (props.$city ? `${props.$url}${props.$city}` : '')});
+export const Container = styled.div`
+  background-image: url('/weather-bg.jpg');
   background-color: #333;
   padding: 0 15px;
   @media (min-width: 731px) {
