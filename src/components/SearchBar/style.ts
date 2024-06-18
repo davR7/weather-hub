@@ -20,10 +20,20 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  background-color: #f0af4b;
-  border: none;
-  border-radius: 60%;
+  position: relative;
+  display: inline-block;
   padding: 8px;
+  background: #ffd700;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 60%;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 0 0 rgba(0, 0, 0, 0.5) inset,
+    0 1.1em 0 rgba(255, 255, 255, 0.25) inset,
+    0 -1.1em 1.25em rgba(0, 0, 0, 0.32) inset,
+    0 1.1rem 1.25em rgba(255, 255, 255, 0.05) inset,
+    0 1.1em 6px rgba(255, 255, 255, 0.1) inset;
   cursor: pointer;
 
   img {
